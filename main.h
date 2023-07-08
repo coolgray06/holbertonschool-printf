@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-int _printf(char *str);
+int countString(char *str);
+int _printf(const *char const format, ...);
+
 
 #endif
