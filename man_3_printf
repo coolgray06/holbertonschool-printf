@@ -1,0 +1,16 @@
+.TH _printf 3 "Holberton C - PRINTF MAN Page"
+
+.SH NAME
+.B _printf\fR \- a custom formatted output function.
+
+.SH SYNOPSIS
+.B #include \fB"main.h"
+
+.B int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+The \fB_printf\fR function is a custom execution of the formatted output function in C. It provides a flexible way to generate formatted output to the standard output stream, \fBstdout\fR. This function takes a format string as its first argument, followed by zero or more additional arguments depending on the format string.
+
+.SH Format Specifiers
+.in The format string may contain format specifiers that define the expected data type and formatting options for the subsequent arguments. The format specifiers include:
+
