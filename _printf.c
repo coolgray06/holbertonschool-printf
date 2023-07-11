@@ -63,7 +63,6 @@ int _printf(const char *format, ...)
 				return(-1);
 			else
 			{
-				len--;
 				format--;
 				putchar(*format);
 			}
