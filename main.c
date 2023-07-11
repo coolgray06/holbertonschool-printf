@@ -21,7 +21,5 @@ int main(void)
 	printf("Percent: [%%]\n");
 	_printf("Integer: [%d]\n", len);
 	printf("Integer: [%d]\n", len2);
-	_printf("Integer: [%i]\n", 0);
-	printf("Integer: [%i]\n", 0);
 	return (0);
 }

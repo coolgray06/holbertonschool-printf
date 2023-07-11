@@ -39,23 +39,22 @@ void _printChar(char c)
  */
 int _printInt(int num)
 {
-	/*char str[12];
+	char str[12];
 	char *ptr;
+	int count;
 
-	sprintf(str, "%d", d);
+	sprintf(str, "%d", num);
 	ptr = str;
 
 	while (*ptr != '\0')
 	{
 		putchar(*ptr);
 		ptr++;
-	}**/
+	}
 	
-	int count;
 	for (count = 0; num != 0; count++)
 	{
 		num /= 10;
-		putchar(num);
 	}
     return count;
 }
