@@ -38,6 +38,8 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == '%')
 				putchar(37);
+			else
+				putchar(*format);
 		}
 		else
 			putchar(*format);
@@ -45,5 +47,5 @@ int _printf(const char *format, ...)
 		len++;
 	}
 	va_end(args);
-	return (len + lenStr + lenInt);
+	return (len + lenStr + lenInt - 1);
 }
