@@ -18,8 +18,6 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
-	if (format == "%")
-		return (-1);
 	while (*format != '\0')
 	{
 		if (*format == '%')
@@ -61,6 +59,8 @@ int _printf(const char *format, ...)
 				putchar(37);
 				len++;
 			}
+			else if (*format == '\0')
+				return(-1);
 			else
 			{
 				len--;
