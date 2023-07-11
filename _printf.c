@@ -23,7 +23,18 @@ int _printf(const char *format, ...)
 			if (*format == 's')
 			{
 				str = va_arg(args, char*);
-				lenStr = _printString(str);
+				if (str == NULL)
+				{
+					putchar ('(');
+					putchar ('n');
+					putchar ('u');
+					putchar ('l');
+					putchar ('l');
+					putchar (')');
+					lenStr = 6;
+				}
+				else
+					lenStr = _printString(str);
 			}
 			else if (*format == 'i' || *format == 'd')
 			{
