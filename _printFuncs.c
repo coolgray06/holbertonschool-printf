@@ -7,10 +7,16 @@
  *
  * Return: void
  */
-void _printString(char *str)
+int _printString(char *str)
 {
-	if (*str != '\0')
-		puts(str);
+	int count = 0;
+	
+	while (str[count] != '\0')
+	{
+		putchar(str[count]);
+		count++;
+	}
+	return (count);
 }
 
 /**
@@ -31,9 +37,9 @@ void _printChar(char c)
  *
  * Return: void
  */
-void _printInt(int d)
+int _printInt(int num)
 {
-	char str[12];
+	/*char str[12];
 	char *ptr;
 
 	sprintf(str, "%d", d);
@@ -43,7 +49,15 @@ void _printInt(int d)
 	{
 		putchar(*ptr);
 		ptr++;
+	}**/
+	
+	int count;
+	for (count = 0; num != 0; count++)
+	{
+		num /= 10;
+		putchar(num);
 	}
+    return count;
 }
 
 
