@@ -11,7 +11,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int num, len = 0, lenStr = 0, lenInt = 0;
+	int num, len = 0, lenStr = 0, lenInt = 0, lenStrReturn = 0, lenIntReturn = 0;
 	char ch, *str;
 
 	va_start(args, format);
@@ -34,12 +34,16 @@ int _printf(const char *format, ...)
 					lenStr = 6;
 				}
 				else
-					lenStr = _printString(str);
+				{
+					lenStrReturn = _printString(str);
+					lenStr += lenStrReturn;
+				}
 			}
 			else if (*format == 'i' || *format == 'd')
 			{
 				num = va_arg(args, int);
-				lenInt = _printInt(num);
+				lenIntReturn = _printInt(num);
+				lenInt += lenIntReturn;
 			}
 			else if (*format == 'c')
 			{
