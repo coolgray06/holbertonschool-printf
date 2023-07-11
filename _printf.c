@@ -1,46 +1,47 @@
+#include "main.h"
 #include <stdarg.h>
 #include <stdio.h>
-#include "main.h"
 
-int _printf(const *char const format, ...)
+/**
+ * _printf - our own print f
+ * @format:  format specifier
+ *
+ * Return: int
+ **/
+int _printf(const char *format, ...)
 {
-	va_list ap;
-	int num, i = 0;
-	const char *ptr = format;
+	va_list args;
+	int num, len = 0;
+	char ch, *str;
 
-	va_start(ap, format);
-
-	op_t ops[] = {
-        {"d", op_countString},
-        {"i", op_countString},
-        {"u", op_calcConst},
-        {"o", op_calcConst},
-        {"x", op_calcConst},
-        {"X", op_calcConst},
-        {"c", op_myPutchar},
-        {"s", op_myPuts},
-        {"p", op_processAddress},
-        {"%", op_myPuts},
-        {"r", op_myPuts},
-        {NULL, NULL}
-        };
-	
-	while (format != NULL && *ptr != '\0')
+	va_start(args, format);
+	while (*format != '\0')
 	{
-		if (va_arg(ap, int) == "%"
+		if (*format == '%')
 		{
-			ptr++;
-			num = *ptr;
-			break;
+			format++;
+			if (*format == 's')
+			{
+				str = va_arg(args, char*);
+				_printString(str);
+			}
+			else if (*format == 'i' || *format == 'd')
+			{
+				num = va_arg(args, int);
+				_printInt(num);
+			}
+			else if (*format == 'c')
+			{
+				ch = va_arg(args, int);
+				_printChar(ch);
+			}
+			else if (*format == '%')
+				putchar(37);
 		}
 		else
-			ptr++;
+			putchar(*format);
+		format++;
 	}
-
-	while (ops[i].op)
-	{
-		if (*(ops[i].op) == *s)
-			return (ops[i].f);
-		i++;
-	}
+	va_end(args);
+	return (len);
 }
