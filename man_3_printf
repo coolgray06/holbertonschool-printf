@@ -9,8 +9,46 @@
 .B int _printf(const char *format, ...);
 
 .SH DESCRIPTION
-The \fB_printf\fR function is a custom execution of the formatted output function in C. It provides a flexible way to generate formatted output to the standard output stream, \fBstdout\fR. This function takes a format string as its first argument, followed by zero or more additional arguments depending on the format string.
+.in 0.5n
+The \fB_printf\fR function is a custom execution of the formatted output function in C. It provides a flexible way to generate formatted output to the standard output stream, \fBstdout\fR. This function takes a format string as its first argument, followed by zero or more additional arguments depending on the format string. The \fB_printf\fR function has many other functionalities, but were chosen to be excluded.
 
-.SH Format Specifiers
-.in The format string may contain format specifiers that define the expected data type and formatting options for the subsequent arguments. The format specifiers include:
+.SH FORMAT SPECIFIERS
+.in 0.5n
+The format string may contain format specifiers that define the expected data type and formatting options for the subsequent arguments. The format specifiers include:
 
+.IP "•"
+.B '%s'\fR- strings
+.IP "•"
+.B '%i'\fR and \fB'%d'\fR- decimal intergers
+.IP "•"
+.B '%c'\fR- single characters
+.IP "•"
+.B '%%'\fR-  percent  symbol
+
+.SH RETURN VALUE
+.in 0.5n
+The \fB_printf\fR function returns the number of characters printed (excluding the null byte used to terminate the output) or a negative value if an error occurs.
+
+.SH EXAMPLE
+.in 0.5n
+When the \fI_printf\fR function encounters a \fB%s\fR in the format string, it retrieves the next argument as a string and passes it to the \fIprint\fR function, which then prints the string. This works because the \fB%s\fR format specifier is interpreted as a request to print a string argument:
+
+.B #include "main.h"
+
+void _printString(const char* str)
+{
+        if (str != NULL)
+                puts(str, stdout);
+}
+
+This example prints the values of a string.
+
+.SH SEE ALSO
+printf(3)
+
+The \fB_printf()\fR function emulates functionality of the C standard library
+function \fBprintf()\fR. This man page borrows from the corresponding Linux
+man page printf(3).
+
+.SH AUTHOR
+Allyson Ugarte DeVaughn Gray
