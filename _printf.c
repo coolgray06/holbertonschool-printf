@@ -34,9 +34,13 @@ int _printf(const char *format, ...)
 			{
 				ch = va_arg(args, int);
 				_printChar(ch);
+				len++;
 			}
 			else if (*format == '%')
+			{
 				putchar(37);
+				len++;
+			}
 			else
 			{
 				len--;
