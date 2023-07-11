@@ -50,13 +50,9 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'c')
 			{
-	
-				if (va_arg(args, int) != '\0')
-				{
 					ch = va_arg(args, int);
 					_printChar(ch);
 					len++;
-				}
 			}
 			else if (*format == '%')
 			{
