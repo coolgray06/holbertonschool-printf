@@ -15,6 +15,9 @@ int _printf(const char *format, ...)
 	char ch, *str;
 
 	va_start(args, format);
+
+	if (format == NULL)
+		return (-1);
 	while (*format != '\0')
 	{
 		if (*format == '%')
@@ -47,9 +50,13 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'c')
 			{
-				ch = va_arg(args, int);
-				_printChar(ch);
-				len++;
+	
+				if (va_arg(args, int) != '\0')
+				{
+					ch = va_arg(args, int);
+					_printChar(ch);
+					len++;
+				}
 			}
 			else if (*format == '%')
 			{
