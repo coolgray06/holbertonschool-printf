@@ -10,6 +10,17 @@ int main(void)
 {
 	char *str = ("let's try to printf a simple sentence.");
 	int num = 23;
+	int len, len2;
+
+	len = _printf("%s", "This sentence is retrieved from va_args!\n");
+	len2 = printf("%s", "This sentence is retrieved from va_args!\n");
+	fflush(stdout);
+	if (len != len2)
+	{
+		printf("Lengths differ.\n");
+		fflush(stdout);
+		return (1);
+	}
 
 	_printf("String: [%s]\n", str);
 	printf("String: [%s]\n", str);

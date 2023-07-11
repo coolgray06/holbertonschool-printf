@@ -29,7 +29,8 @@ int _printf(const char *format, ...)
 			else if (*format == 'i' || *format == 'd')
 			{
 				num = va_arg(args, int);
-				_printInt(num);
+				putchar(num);
+				/*_printInt(num);*/
 			}
 			else if (*format == 'c')
 			{
@@ -42,7 +43,8 @@ int _printf(const char *format, ...)
 		else
 			putchar(*format);
 		format++;
+		len++;
 	}
 	va_end(args);
-	return (len);
+	return (len - 1);
 }
