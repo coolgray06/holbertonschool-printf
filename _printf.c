@@ -47,9 +47,9 @@ int _printf(const char *format, ...)
 		else
 		{
 			putchar(*format);
-			format++;
 			len++;
-		{
+		}
+		format++;
 	}
 	va_end(args);
 	return (len + lenStr + lenInt);
