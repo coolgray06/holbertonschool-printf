@@ -75,5 +75,6 @@ int _printf(const char *format, ...)
 		format++;
 	}
 	va_end(args);
+	len = len - 1;
 	return (len + lenStr + lenInt);
 }
