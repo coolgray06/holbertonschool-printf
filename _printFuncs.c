@@ -50,29 +50,38 @@ void _printChar(char c)
 
 /**
  * _printInt - print int
- * @d: int
+ * @num: int
  *
  * Return: void
  */
 int _printInt(int num)
 {
-	/*char str[12];
+	char str[12];
 	char *ptr;
+	int count, rcount = 0;
 
-	sprintf(str, "%d", d);
+	sprintf(str, "%d", num);
 	ptr = str;
-
-	while (*ptr != '\0')
+        if (num == 0)
 	{
 		putchar(*ptr);
-		ptr++;
-	}**/
-	
-	int count;
-	for (count = 0; num != 0; count++)
-	{
-		num /= 10;
-		putchar(num);
+		count = 1;
 	}
-    return count;
+	else
+	{
+		while (*ptr != '\0')
+		{
+			putchar(*ptr);
+			if (*ptr == '-')
+        	            rcount = 1;
+			ptr++;
+		}
+	
+		for (count = 0; num != 0; count++)
+		{
+			num /= 10;
+		}
+		
+	}
+    return (count + rcount);
 }
