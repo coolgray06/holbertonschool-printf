@@ -48,19 +48,21 @@ int _printInt(int num)
         if (num == 0)
         	count = 1;
 	else
-	while (*ptr != '\0')
 	{
-		putchar(*ptr);
-		if (*ptr == '-')
-                    rcount = 1;
-		ptr++;
-	}
+		while (*ptr != '\0')
+		{
+			putchar(*ptr);
+			if (*ptr == '-')
+        	            rcount = 1;
+			ptr++;
+		}
 	
-	for (count = 0; num != 0; count++)
-	{
-		num /= 10;
+		for (count = 0; num != 0; count++)
+		{
+			num /= 10;
+		}
+		
 	}
-	endif
     return (count + rcount);
 }
 
