@@ -45,14 +45,14 @@ int _printInt(int num)
 
 	sprintf(str, "%d", num);
 	ptr = str;
-
+        if (num == 0)
+        	count = 1;
+	else
 	while (*ptr != '\0')
 	{
 		putchar(*ptr);
 		if (*ptr == '-')
                     rcount = 1;
-		if (*ptr == '0')
-                    rcount += 1;
 		ptr++;
 	}
 	
@@ -60,6 +60,7 @@ int _printInt(int num)
 	{
 		num /= 10;
 	}
+	endif
     return (count + rcount);
 }
 
