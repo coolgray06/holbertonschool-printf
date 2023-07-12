@@ -9,14 +9,31 @@
  */
 int _printString(char *str)
 {
-	int count = 0;
-	
-	while (str[count] != '\0')
-	{
-		putchar(str[count]);
-		count++;
-	}
-	return (count);
+        int count = 0;
+        while (str[count] != '\0')
+        {
+                putchar(str[count]);
+                count++;
+        }
+        return (count);
+}
+int _printInt(int num)
+{
+        char str[12];
+        char *ptr;
+        int count;
+
+        sprintf(str, "%d", num);
+        ptr = str;
+        while (*ptr != '\0')
+        {
+                putchar(*ptr);
+                ptr++;
+        }
+        for (count = 0; num != 0; count++)
+        {
+                num /= 10;
+        }
 }
 
 /**
@@ -59,5 +76,3 @@ int _printInt(int num)
 	}
     return count;
 }
-
-
