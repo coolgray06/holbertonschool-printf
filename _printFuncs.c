@@ -51,6 +51,8 @@ int _printInt(int num)
 		putchar(*ptr);
 		if (*ptr == '-')
                     rcount = 1;
+		if (*ptr == '0')
+                    rcount += 1;
 		ptr++;
 	}
 	
