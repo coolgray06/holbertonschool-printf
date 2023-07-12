@@ -33,7 +33,7 @@ void _printChar(char c)
 
 /**
  * _printInt - print int
- * @d: int
+ * @num: int
  *
  * Return: void
  */
@@ -41,7 +41,7 @@ int _printInt(int num)
 {
 	char str[12];
 	char *ptr;
-	int count;
+	int count, rcount = 0;
 
 	sprintf(str, "%d", num);
 	ptr = str;
@@ -49,6 +49,8 @@ int _printInt(int num)
 	while (*ptr != '\0')
 	{
 		putchar(*ptr);
+		if (*ptr == '-')
+                    rcount = 1;
 		ptr++;
 	}
 	
@@ -56,7 +58,7 @@ int _printInt(int num)
 	{
 		num /= 10;
 	}
-    return count;
+    return (count + rcount);
 }
 
 
