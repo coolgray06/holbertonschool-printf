@@ -46,7 +46,10 @@ int _printInt(int num)
 	sprintf(str, "%d", num);
 	ptr = str;
         if (num == 0)
-        	count = 1;
+	{
+		putchar(*ptr);
+		count = 1;
+	}
 	else
 	{
 		while (*ptr != '\0')
